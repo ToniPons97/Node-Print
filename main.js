@@ -12,6 +12,7 @@ function renderHTMLResponse(fileName, res) {
 }
 
 http.createServer((req, res) => {
+    const PRINTER_NAME = 'Samsung_C48x_Series';
     if (req.url === '/fileupload') {
         let form = new formidable.IncomingForm();
         form.parse(req, (err, fields, files) => {
@@ -24,7 +25,7 @@ http.createServer((req, res) => {
                 renderHTMLResponse('success.html', res);
             });
 
-            let cmd = `lp -d Samsung_C48x_Series \"${newpath}\"`;
+            let cmd = `lp -d ${PRINTER_NAME} \"${newpath}\"`;
             exec(cmd, (error, stdout, stderr) => {
                 if (error) {
                     console.log(`error: ${error}`);

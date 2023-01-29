@@ -5,7 +5,8 @@
 
 ## To use this we need:
 
-1. a computer (in my case this is running on a Raspberry Pi 3B+)
+1. a computer running Linux (in my case this is running on a Raspberry Pi 3B+ with Raspbian).
+2. Check that your OS has the [lp command](https://www.maketecheasier.com/use-lp-command-linux/) since this is what the program is going to run in the background when the server recieves the file to print.
 2. Node.js
 
 ## NPM Packages in use
@@ -22,6 +23,8 @@ Open the terminal, go inside the project directory and run **npm i** to install 
 ## Basic Setup
 
 You need a printer, a computer (preferably a raspberry pi) with the printer's driver installed and a usb port to connect your printer. I suggest you assign a static IP address for the computer.
+
+On line 15 inside **main.js** you'll see a variable called **PRINTER_NAME**, change the value to the name of your printer (get be the name from the computer's OS).
 
 Then you run **npm start** to start the server and check that the server is running by visiting the page's index.html...
 
